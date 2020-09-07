@@ -1,0 +1,54 @@
+{% extends ('base.html.twig') %}
+
+{% block card %}
+    <div class="card-body">
+        <div class="row d-flex justify-content-between px-3 mb-3">
+            <div class="d-flex align-items-center justify-content-start" style="color: #174a84">
+                <i class="fas fa-file-invoice float-left fa-3x mr-4 ml-2"></i>
+                <h4 class="card-title align-middle mb-0"> Nouvelle Facture </h4>
+            </div>
+        </div>
+        <div class="card-text">
+            {{ form_start(form_client) }}
+
+
+            <div class="form-group">
+                {{ form_label(form_client.nameClient , "Nom de client" )  }}
+                {{ form_widget(form_client.nameClient , {'attr' : {'placeholder':" Saisir le nom de client"}}) }}
+            </div>
+
+            <div class="form-group">
+                {{ form_label(form_client.adresseClient , "Adresse de client" )  }}
+                {{ form_widget(form_client.adresseClient , {'attr' : {'placeholder':" Ex. Rue 19 Sidi Moha Casablanca"}}) }}
+            </div>
+
+            <div class="form-group">
+                {{ form_label(form_client.telephoneClient , "Numero de telephone de client" )  }}
+                {{ form_widget(form_client.telephoneClient , {'attr' : {'placeholder':" Ex. (+212 6 66 66 66 66"}}) }}
+            </div>
+
+            <div class="form-group">
+                {{ form_label(form_client.emailClient , "Adresse email de client" )  }}
+                {{ form_widget(form_client.idClient emailClient, {'attr' : {'placeholder':" Ex. client@societe.xx"}}) }}
+            </div>
+
+            <div class="form-group">
+                {{ form_label(form_client.codepostalClient , "Code postal de client" )  }}
+                {{ form_widget(form_client.codepostalClient , {'attr' : {'placeholder':" Ex. 86000"}}) }}
+            </div>
+
+            <div class="form-group">
+                {{ form_label(form_client.subscribedAt , "La date d'inscription" )  }}
+                {{ form_widget(form_client.subscribedAt , {'attr' : {'placeholder':" Saisir le nom de client"}}) }}
+            </div>
+
+            <div class="form-group text-center">
+                <button class="btn btn-primary button ">Valider</button>
+            </div>
+            {{ form_end(form_client) }}
+        </div>
+
+    </div>
+
+
+{% endblock %}

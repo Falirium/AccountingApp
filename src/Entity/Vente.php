@@ -32,6 +32,12 @@ class Vente
      */
     private $commande;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Client::class, inversedBy="ventes")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $client;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -75,6 +81,18 @@ class Vente
         if ($commande->getVente() !== $newVente) {
             $commande->setVente($newVente);
         }
+
+        return $this;
+    }
+
+    public function getClient(): ?Client
+    {
+        return $this->client;
+    }
+
+    public function setClient(?Client $client): self
+    {
+        $this->client = $client;
 
         return $this;
     }

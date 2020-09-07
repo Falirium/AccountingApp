@@ -1,0 +1,59 @@
+body {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 14px;
+    background-color: rgba(250,253,255,1);
+}
+
+.sidebar {
+    height: 100vh;
+    background-color: #174a84;
+    box-shadow: 1px 3px 3px  #999;
+}
+.border_bottom{
+    border-bottom: 1px solid #f1f2f3;
+}
+.sidebar_item {
+    transition: all .4s;
+}
+.sidebar_item:hover {
+    background-color: #07274C;
+    border-right: 11px solid rgba(150, 229, 178,1);
+    color: rgba(150, 229, 178,1) !important;
+    transform: translateY(-2px);
+    box-shadow: 0px 3px 2px -2px rgba(1,1,1,0.6);
+}
+.link:hover {
+    color: rgba(150, 229, 178,1) !important;
+}
+.bottom_shadow {
+    box-shadow: 0px 2px 4px -2px rgba(1,1,1,0.5);
+}
+
+.table_design {
+    font-size: 0.8rem;
+
+}
+
+.card1 {
+    height: 70vh;
+}
+.card-shadow {
+    box-shadow: 0px 0px 5px 1px rgba(226,236,254,1);
+    border: 1px solid rgba(226,236,254,1);
+}
+.button {
+    font-size: 0.7rem;
+}
+.consulter_btn{
+    background-color: rgba(170, 255, 190,1);
+    color : rgba(110, 177, 130,1) !important;
+    border: 1px solid rgba(170, 255, 190,1) !important;
+
+
+}
+.consulter_btn:hover {
+    border: 3px solid rgba(170, 255, 190,1) !important;
+}
+.ajouter_btn {
+
+}
