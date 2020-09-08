@@ -44,7 +44,7 @@ class VenteController extends AbstractController
         // Fetch all the products
         $produitsVentes = $vente->getCommande()->getProduits()->toArray();
 
-        return $this->render('client/consult.html.twig', [
+        return $this->render('vente/consult.html.twig', [
             'vente'      =>$vente ,
             'produits'  =>$produitsVentes
         ]);

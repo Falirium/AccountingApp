@@ -1,0 +1,60 @@
+{% extends ('base.html.twig') %}
+
+{% block title %}Produits{% endblock %}
+
+{% block card %}
+    <div class="card-body ">
+        <div class="row d-flex justify-content-between px-3">
+            <div class="d-flex align-items-center justify-content-start" style="color: #174a84">
+                <i class="fas fa-file-invoice float-left fa-3x mr-4 ml"></i>
+                <h4 class="card-title align-middle mb-0"> Liste des factures </h4>
+            </div>
+            <button class="btn text-primary border-primary my-4 btn-sm float-right button "><a class="text-primary" href="{{ path('facture.create_facture') }}">Créer une facture</a></button>
+        </div>
+
+
+        <div class="table-responsive overflow-auto h-75">
+            <table class="table table-hover table-sm table_design" >
+                <thead class="text-muted">
+
+                <tr >
+                    <th  scope="col"> Reference</th>
+                    <th  scope="col">Type </th>
+                    <th  scope="col">Description</th>
+                    <th scope="col">Designation</th>
+
+
+                </tr>
+                </thead>
+                <tbody class="table-striped pb-1">
+
+                <tr>
+                    <td> {{ produit.idProduit}} </td>
+                    <td> {{ produit.typeProduit }}</td>
+                    <td>{{ produit.descriptionProduit }}</td>
+                    <td> {{ produit.designationProduit }}</td>
+
+
+                </tr>
+
+                </tbody>
+
+            </table>
+        </div>
+        <div class="card-fotter">
+            <button type="button" class="btn btn-sm text-primary border-primary mx-1 button"><a href="{{ path('produit.consultAll') }}">Revenir</a></button>
+            <button type="button" class="btn btn-sm  btn-primary border-primary mx-1 float-right button"><a class="text-white "  href="{{ path('produit.update', { idProduit : produit.idProduit }) }}">Modifier</a></button>
+            <button type="button" class="btn btn-sm  btn-danger border-danger mx-1 float-right button"><a class="text-white "  href="{{ path('produit.delete', { idProduit : produit.idProduit }) }}">Supprimer</a></button>
+
+        </div>
+    </div>
+
+{% endblock %}
+
+
+
+{% block stat %}
+    <h2 class="font-weight-normal text-center ">Statistiques Today</h2>
+    <hr>
+    <p class="lead">Lorem mlskjdlkqsjd;,sqd dlqksjdlkqsd q qlkjsdqsdjklq dqlsjdlkqsdlkqd</p>
+{% endblock %}
