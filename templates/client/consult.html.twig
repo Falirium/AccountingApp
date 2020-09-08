@@ -33,7 +33,7 @@
                         <td>{{ client.nameClient }}</td>
                         <td> {{ client.emailClient }} </td>
                         <td> {{ client.subscribedAt | date("m/d/Y") }} </td>
-                        <td><button type="button" class="btn btn-sm button consulter_btn"><a class="text-success d-inline-block mx-1" href="{{ path('client.consultFactures',{id_Facture : client.idFacture}) }}">Gérer les factures</a></button></td>
+                        <td><button type="button" class="btn btn-sm button consulter_btn"><a class="text-success d-inline-block mx-1" href="{{ path('client.consultFactures',{idClient : client.idClient}) }}">Gérer les factures</a></button></td>
 
                     </tr>
 

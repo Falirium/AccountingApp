@@ -1,20 +1,45 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello VenteController!{% endblock %}
+{% block title %}Ventes{% endblock %}
 
-{% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+{% block card %}
+    <div class="card-body ">
+        <div class="row d-flex justify-content-between px-3">
+            <div class="d-flex align-items-center justify-content-start" style="color: #174a84">
+                <i class="fas fa-user-alt float-left fa-3x mr-4 ml"></i>
+                <h4 class="card-title align-middle mb-0"> Liste des Ventes </h4>
+            </div>
+            <button class="btn text-primary border-primary my-4 btn-sm float-right button "><a class="text-primary" href="{{ path('facture.create_facture') }}">Créer une vente</a></button>
+        </div>
+        <div class="table-responsive overflow-auto h-75">
+            <table class="table table-hover table-sm table_design" >
+                <thead class="text-muted">
+                <tr>
+                    <th  scope="col"> Reference</th>
+                    <th  scope="col">Nom de Client </th>
+                    <th scope="col">Reference Commande</th>
+                    <th  scope="col"> Date de vente  </th>
+                    <th scope="col"></th>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+                </tr>
+                </thead>
+                <tbody class="table-striped pb-1">
+                {% for vente in ventes %}
+                    <tr>
+                        <td> {{ vente.idVente}} </td>
+                        <td> {{ vente.idClient.nameClient }} </td>
+                        <td>{{ vente.idCommande }}</td>
+                        <td> {{ vente.subscribedAt | date("m/d/Y") }} </td>
+                        <td><button type="button" class="btn  btn-sm button consulter_btn"><a class="text-success" href="{{ path('client.consultOne',{idClient : client.idClient}) }}">Consulter</a></button></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/farfa/Documents/SymfonyWorks/ComptaApp/src/Controller/VenteController.php'|file_link(0) }}">src/Controller/VenteController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/farfa/Documents/SymfonyWorks/ComptaApp/templates/vente/index.html.twig'|file_link(0) }}">templates/vente/index.html.twig</a></code></li>
-    </ul>
-</div>
+            </table>
+        </div>
+
+
+    </div>
+
+
 {% endblock %}

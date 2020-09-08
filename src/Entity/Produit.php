@@ -64,6 +64,11 @@ class Produit
      */
     private $stockProduit;
 
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $taxeProduit;
+
     public function __construct()
     {
         $this->commandes = new ArrayCollection();
@@ -194,6 +199,18 @@ class Produit
     public function setStockProduit(int $stockProduit): self
     {
         $this->stockProduit = $stockProduit;
+
+        return $this;
+    }
+
+    public function getTaxeProduit(): ?float
+    {
+        return $this->taxeProduit;
+    }
+
+    public function setTaxeProduit(float $taxeProduit): self
+    {
+        $this->taxeProduit = $taxeProduit;
 
         return $this;
     }

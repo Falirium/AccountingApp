@@ -17,25 +17,39 @@
                 <tr>
                     <th  scope="col"> Reference</th>
                     <th  scope="col">Fornisseur </th>
-                    <th scope="col">Prix Total(en DH)</th>
+                    <th  scope="col">Produits </th>
+                    <th  scope="col">Quantité </th>
+                    <th scope="col">Prix d'achat(en DH)</th>
                     <th  scope="col"> Date d'achat  </th>
                     <th scope="col"> </th>
+
 
                 </tr>
                 </thead>
                 <tbody class="table-striped pb-1">
-                {% for vente in ventes %}
-                    <tr>
-                        <td> {{ vente.idVente}} </td>
-                        <td> {{ vente.idClient.nameClient }} </td>
-                        <td>{{ vente.idCommande }}</td>
-                        <td> {{ vente.subscribedAt | date("m/d/Y") }} </td>
-                        <td><button type="button" class="btn  btn-sm button consulter_btn"><a class="text-success" href="{{ path('client.consultOne',{idClient : client.idClient}) }}">Consulter</a></button></td>
-                    </tr>
-                {% endfor %}
+
+                <tr>
+                    <td> {{ achat.idAchat}} </td>
+                    <td> XXXXXXXXX </td>
+                    <td>
+                        {% for produit in produits %}
+                            {{ produit.nomProduit }}
+                        {% endfor %}
+
+                    </td>
+                    <td> {{ achat.createdAt | date("m/d/Y") }} </td>
+
+                </tr>
+
                 </tbody>
 
             </table>
+        </div>
+        <div class="card-fotter">
+            <button type="button" class="btn btn-sm text-primary border-primary mx-1 button"><a href="{{ path('client.consultAll') }}">Revenir</a></button>
+            <button type="button" class="btn btn-sm  btn-primary border-primary mx-1 float-right button"><a class="text-white "  href="{{ path('client.update', { idClient : client.idClient }) }}">Modifier</a></button>
+
+
         </div>
 
 
