@@ -80,7 +80,7 @@ class CommandeController extends AbstractController
 
         }
 
-        return $this->render('commande/consult.html.twig',[
+        return $this->render('commande/create.html.twig',[
             "form_commande"      =>$form->createView()
         ]);
     }

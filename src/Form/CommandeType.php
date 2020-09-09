@@ -4,8 +4,13 @@ namespace App\Form;
 
 use App\Entity\Commande;
 use App\Entity\Produit;
+
+
+use phpDocumentor\Reflection\Types\Integer;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -16,12 +21,16 @@ class CommandeType extends AbstractType
         $builder
             ->add('idCommande')
             ->add('createdAt')
-            ->add('produits', EntityType::class , [
+
+            ->add('nomProduit', EntityType::class , [
                 'class' =>  Produit::class,
                 'choice_label'  =>  'nomProduit'
             ])
-            ->add('qteProduit')
-            ->add('typeCommande')
+            ->add('isVente', CheckboxType::class , [
+                'label'    => 'Est une Vente?',
+                'required' => false,
+            ])
+
         ;
     }
 

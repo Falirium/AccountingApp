@@ -12,6 +12,12 @@ class JeuxDonneesFixtures extends Fixture
         // $product = new Product();
         // $manager->persist($product);
 
+        // 1- Product list
+        for( $i=0 ; $i < 6; $i++) {
+
+        }
+        // 2- Vente Requests
+
         $manager->flush();
     }
 }

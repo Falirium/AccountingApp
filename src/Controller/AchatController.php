@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/achat", name="achat")
+ * @Route("/achat", name="achat.")
  */
 
 class AchatController extends AbstractController
@@ -26,7 +26,7 @@ class AchatController extends AbstractController
         // Fetch all the clients
         $achats = $achatRepository->findAll();
 
-        return $this->render('client/index.html.twig', [
+        return $this->render('achat/index.html.twig', [
             'achats' => $achats
         ]);
     }

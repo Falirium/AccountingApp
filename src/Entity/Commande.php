@@ -44,6 +44,11 @@ class Commande
      */
     private $produits;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isVente;
+
     public function __construct()
     {
         $this->produits = new ArrayCollection();
@@ -124,6 +129,18 @@ class Commande
         if ($this->produits->contains($produit)) {
             $this->produits->removeElement($produit);
         }
+
+        return $this;
+    }
+
+    public function getIsVente(): ?bool
+    {
+        return $this->isVente;
+    }
+
+    public function setIsVente(bool $isVente): self
+    {
+        $this->isVente = $isVente;
 
         return $this;
     }
